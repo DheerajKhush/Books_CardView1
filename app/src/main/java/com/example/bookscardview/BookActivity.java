@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 public class BookActivity extends AppCompatActivity {
 
-    private TextView tvtitle, tvdescription, tvCategory;
+    private TextView tvtitle;
     private ImageView img;
     private Button button;
     private String pdfUrl;
@@ -25,15 +25,12 @@ public class BookActivity extends AppCompatActivity {
         setContentView(R.layout.activity_book);
 
         tvtitle= (TextView)findViewById(R.id.txtTitle);
-        tvCategory=(TextView)findViewById(R.id.txtCat);
-        tvdescription=(TextView)findViewById(R.id.txtDesc);
         img= (ImageView)findViewById(R.id.bookthumbnail);
         button=(Button)findViewById(R.id.read);
 
         //Receive data
         Intent intent= getIntent();
         String Title= intent.getExtras().getString("Title");
-        String Description= intent.getExtras().getString("Description");
         int image = intent.getExtras().getInt("Thumbnail");
         pdfUrl= intent.getExtras().getString("BookPdfLink");
 
@@ -41,7 +38,7 @@ public class BookActivity extends AppCompatActivity {
 
         //setting values
         tvtitle.setText(Title);
-        tvdescription.setText(Description);
+
         img.setImageResource(image);
 
         button.setOnClickListener(new View.OnClickListener() {

@@ -78,7 +78,6 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:textSize="15sp"
-        android:onClick="openPdf"
         android:textStyle="bold|italic"
         android:layout_marginBottom="8dp"/>
 

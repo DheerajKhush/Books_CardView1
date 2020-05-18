@@ -1,34 +1,22 @@
 package com.example.bookscardview;
 
-
-public class Book {
+public class Menu {
     private String title;
     private int thumbnail;
-    private String bookPdfLink;
-    public Book(){
-
-    }
-    public Book(String title, int thumbnail, String bookPdfLink){
+    public Menu(String title, int thumbnail ){
         this.title= title;
 
         this.thumbnail= thumbnail;
-        this.bookPdfLink=bookPdfLink;
+
     }
 
     public String getTitle() {
         return title;
     }
 
-
-
     public int getThumbnail() {
         return thumbnail;
     }
-
-
-    public String getBookPdfLink(){ return bookPdfLink;}
-
-
 
     public void setThumbnail(int thumbnail) {
         this.thumbnail = thumbnail;
@@ -38,7 +26,7 @@ public class Book {
         this.title = title;
     }
 
-    public void setBookPdfLink(String bookPdfLink){ this.bookPdfLink= bookPdfLink;}
 
-    }
+}
+
 

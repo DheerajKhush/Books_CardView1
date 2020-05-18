@@ -14,40 +14,38 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
-
-
+public class homeRecyclerViewAdapter extends RecyclerView.Adapter<homeRecyclerViewAdapter.MyViewHolder> {
     private Context mContext;
-    private List<Book> mData;
+    private List<Menu> mData;
 
 
-
-    public RecyclerViewAdapter(Context context, List<Book> mData){
+    public homeRecyclerViewAdapter(Context context, List<Menu> mData){
         this.mContext= context;
         this.mData= mData;
     }
 
     @Override
-    public MyViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
+    public homeRecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
         LayoutInflater inflater= LayoutInflater.from(mContext);
-        view= inflater.inflate(R.layout.cardview_item_book,parent,false);
-        return new MyViewHolder(view);
+        view= inflater.inflate(R.layout.home_cardview_item,parent,false);
+        return new homeRecyclerViewAdapter.MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull homeRecyclerViewAdapter.MyViewHolder holder, int position) {
+
         holder.tv_book_title.setText(mData.get(position).getTitle());
         holder.img_book_thumbnail.setImageResource(mData.get(position).getThumbnail());
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext,BookActivity.class);
+                Intent intent = new Intent(mContext,MainActivity.class);
 
-                //passing data to book activity
-                intent.putExtra("Title",mData.get(position).getTitle());
-                intent.putExtra("Thumbnail",mData.get(position).getThumbnail());
-                intent.putExtra("BookPdfLink",mData.get(position).getBookPdfLink());
+//                //passing data to book activity
+//                intent.putExtra("Title",mData.get(position).getTitle());
+//                intent.putExtra("Thumbnail",mData.get(position).getThumbnail());
+//                intent.putExtra("BookPdfLink",mData.get(position).getBookPdfLink());
                 //start activity
                 mContext.startActivity(intent);
             }
@@ -58,30 +56,23 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public int getItemCount() {
         return mData.size();
-    }
 
+
+    }
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView tv_book_title;
         ImageView img_book_thumbnail;
-        CardView cardView ;
+        CardView cardView;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            tv_book_title = (TextView) itemView.findViewById(R.id.book_title_id) ;
-            img_book_thumbnail = (ImageView) itemView.findViewById(R.id.book_img_id);
-            cardView = (CardView) itemView.findViewById(R.id.cardView_id);
+            tv_book_title = (TextView) itemView.findViewById(R.id.homebooktxtView);
+            img_book_thumbnail = (ImageView) itemView.findViewById(R.id.homebook_img_id);
+            cardView = (CardView) itemView.findViewById(R.id.homecardView_id);
 
 
         }
-    }
 
-
-
-
-
-
-
-    }
-
+    }}
