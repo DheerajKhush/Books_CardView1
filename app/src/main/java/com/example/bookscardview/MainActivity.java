@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         lstBook.add(new Book("He Died with...",R.drawable.hediedwith,"https://birdcount.in/wp-content/uploads/2015/02/Intro-to-Birds-and-Birdwatching-GBBC-BirdCountIndia-v0.2.pdf"));
         lstBook.add(new Book("The Vegitarian",R.drawable.thevigitarian,"https://birdcount.in/wp-content/uploads/2015/02/Intro-to-Birds-and-Birdwatching-GBBC-BirdCountIndia-v0.2.pdf"));
 
-        RecyclerView myRecyclerView= (RecyclerView) findViewById(R.id.recyclerView_id);
+        RecyclerView myRecyclerView= findViewById(R.id.recyclerView_id);
         RecyclerViewAdapter myAdapter= new RecyclerViewAdapter(this,lstBook);
         myRecyclerView.setLayoutManager(new GridLayoutManager(this,3));
         myRecyclerView.setAdapter(myAdapter);

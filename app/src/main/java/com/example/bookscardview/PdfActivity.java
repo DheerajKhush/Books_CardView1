@@ -23,7 +23,7 @@ public class PdfActivity extends AppCompatActivity  {
         String savedExtra = getIntent().getStringExtra("pdfLink");
         Log.println(0,savedExtra,savedExtra);
 
-         webView = (WebView) findViewById(R.id.webView);
+         webView = findViewById(R.id.webView);
         webView.setWebViewClient(new MyBrowser());
             this.WebViewSet(savedExtra);
 

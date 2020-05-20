@@ -24,9 +24,9 @@ public class BookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
 
-        tvtitle= (TextView)findViewById(R.id.txtTitle);
-        img= (ImageView)findViewById(R.id.bookthumbnail);
-        button=(Button)findViewById(R.id.read);
+        tvtitle= findViewById(R.id.txtTitle);
+        img= findViewById(R.id.bookthumbnail);
+        button= findViewById(R.id.read);
 
         //Receive data
         Intent intent= getIntent();

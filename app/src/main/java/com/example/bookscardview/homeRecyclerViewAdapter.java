@@ -33,14 +33,36 @@ public class homeRecyclerViewAdapter extends RecyclerView.Adapter<homeRecyclerVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull homeRecyclerViewAdapter.MyViewHolder holder, int position) {
-
+    public void onBindViewHolder(@NonNull final homeRecyclerViewAdapter.MyViewHolder holder, final int position) {
+        holder.getAdapterPosition();
         holder.tv_book_title.setText(mData.get(position).getTitle());
         holder.img_book_thumbnail.setImageResource(mData.get(position).getThumbnail());
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext,MainActivity.class);
+                
+              int pos=  holder.getAdapterPosition();
+                Intent intent = null;
+                if(pos==0) {
+                    intent = new Intent(mContext,MainActivity.class);
+                }
+                if(pos==1) {
+                    intent = new Intent(mContext,ChiefActivity.class);
+                }
+                if(pos==2) {
+                    intent = new Intent(mContext,MainActivity.class);
+                }
+                if(pos==3) {
+                     intent = new Intent(mContext,ChiefActivity.class);
+                }
+                if(pos==4) {
+                     intent = new Intent(mContext,MainActivity.class);
+                }
+                if(pos==5) {
+                     intent = new Intent(mContext,MainActivity.class);
+                }
+
+
 
 //                //passing data to book activity
 //                intent.putExtra("Title",mData.get(position).getTitle());
@@ -68,9 +90,9 @@ public class homeRecyclerViewAdapter extends RecyclerView.Adapter<homeRecyclerVi
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            tv_book_title = (TextView) itemView.findViewById(R.id.homebooktxtView);
-            img_book_thumbnail = (ImageView) itemView.findViewById(R.id.homebook_img_id);
-            cardView = (CardView) itemView.findViewById(R.id.homecardView_id);
+            tv_book_title = itemView.findViewById(R.id.homebooktxtView);
+            img_book_thumbnail = itemView.findViewById(R.id.homebook_img_id);
+            cardView = itemView.findViewById(R.id.homecardView_id);
 
 
         }
